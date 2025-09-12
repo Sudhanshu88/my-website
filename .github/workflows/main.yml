@@ -28,7 +28,7 @@ jobs:
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ubuntu
-        key: ${{ secrets.EC2_SSH_KEY }}
+        key: ${{ secrets.ec2-65-2-57-7.ap-south-1.compute.amazonaws.com}}
         script: |
           cd /var/www/html
           sudo rm -rf *
