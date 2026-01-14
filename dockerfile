@@ -5,7 +5,7 @@ FROM python:alpine
 WORKDIR myapp
 
 # Remove default nginx website
-RUN rm -rf ./*
+RUN python install
 
 # Copy project files into container
 COPY . .
@@ -13,4 +13,4 @@ COPY . .
 # Expose port 80
 EXPOSE 8080
 
-CMD ["python", "-g", "daemon off;"]
+CMD ["python", "start"]
