@@ -1,8 +1,8 @@
-# Use official Nginx image as the base
-FROM nginx:alpine
 
-# Set working directory
-WORKDIR /usr/share/nginx/html
+FROM python:alpine
+
+
+WORKDIR myapp
 
 # Remove default nginx website
 RUN rm -rf ./*
@@ -11,7 +11,6 @@ RUN rm -rf ./*
 COPY . .
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 8080
 
-# Start Nginx server
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["python", "-g", "daemon off;"]
