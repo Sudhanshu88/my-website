@@ -1,16 +1,11 @@
 
-FROM python:alpine
+FROM python:latest
 
 
 WORKDIR myapp
 
-# Remove default nginx website
+copy ..
 RUN python install
 
-# Copy project files into container
-COPY . .
-
-# Expose port 80
-EXPOSE 8080
 
 CMD ["python", "start"]
